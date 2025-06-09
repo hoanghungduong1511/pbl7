@@ -1,6 +1,7 @@
 {
-  "outputDirectory": "static",
   "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/static/(.*)", "destination": "/static/$1" },
     { "source": "/(.*)", "destination": "/" }
   ]
 }
