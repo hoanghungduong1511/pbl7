@@ -2,8 +2,11 @@
   "builds": [
     {
       "src": "run.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "maxMemory": 1024
     }
+  }
   ],
   "rewrites": [
     { "source": "/static/(.*)", "destination": "/static/$1" }, 
