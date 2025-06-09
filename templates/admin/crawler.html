@@ -18,29 +18,6 @@
         <i data-feather="user-plus" class="me-1"></i> Thu thập dữ liệu
         </a>
     </div>
-  
-      
-    <!-- Form tìm kiếm -->
-    <form method="get" action="{{ url_for('admin_blueprint.user_manager') }}" class="row g-2 mb-3">
-        <div class="col-md-3">
-          <input type="text" name="username" class="form-control" placeholder="Tìm theo username" value="{{ request.args.get('username', '') }}">
-        </div>
-        <div class="col-md-3">
-          <input type="text" name="email" class="form-control" placeholder="Tìm theo email" value="{{ request.args.get('email', '') }}">
-        </div>
-        <div class="col-md-3">
-          <select name="role" class="form-select">
-            <option value="">Tất cả vai trò</option>
-            <option value="Admin" {% if request.args.get('role') == 'Admin' %}selected{% endif %}>Admin</option>
-            <option value="HR" {% if request.args.get('role') == 'HR' %}selected{% endif %}>HR</option>
-            <option value="Seeker" {% if request.args.get('role') == 'Seeker' %}selected{% endif %}>Seeker</option>
-          </select>
-        </div>
-        <div class="col-md-3 text-end">
-          <button class="btn btn-primary">Tìm kiếm</button>
-          <a href="{{ url_for('admin_blueprint.user_manager') }}" class="btn btn-secondary">Đặt lại</a>
-        </div>
-      </form>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% for category, message in messages %}
