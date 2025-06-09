@@ -8,16 +8,10 @@ from flask import Blueprint, request, render_template
 from tensorflow.keras.models import load_model
 from datetime import datetime
 import pymysql
-from keras.saving import register_keras_serializable
+from tensorflow.keras.saving import register_keras_serializable
 from tensorflow.keras.layers import Layer
 import tensorflow.keras.backend as K
 from sklearn.preprocessing import MinMaxScaler
-# LSTM + Attention
-from keras.saving import register_keras_serializable
-from tensorflow.keras.layers import Layer
-import tensorflow.keras.backend as K
-from sklearn.preprocessing import MinMaxScaler
-from tensorflow.keras.models import load_model
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")  # Sử dụng non-GUI backend để tránh lỗi thread
