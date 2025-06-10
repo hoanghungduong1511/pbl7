@@ -4,6 +4,7 @@ Copyright (c) 2019 - present AppSeed.us
 """
 import numpy as np
 import pandas as pd
+import os
 from flask import Blueprint, request, render_template
 from tensorflow.keras.models import load_model
 from datetime import datetime
@@ -23,10 +24,11 @@ charts_blueprint = Blueprint('charts_blueprint', __name__)
 
 def get_db_connection():
     return pymysql.connect(
-        host='localhost',
-        user='root',
-        password='Localhost12345!',
-        db='pbl7',
+        host=os.getenv('DB_HOST'),
+        user=os.getenv('DB_USERNAME'),
+        password=os.getenv('DB_PASS'),
+        db=os.getenv('DB_NAME'),
+        port=int(os.getenv('DB_PORT')),
         charset='utf8mb4',
         cursorclass=pymysql.cursors.DictCursor
     )
